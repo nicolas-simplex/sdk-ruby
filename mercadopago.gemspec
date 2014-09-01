@@ -2,7 +2,7 @@
 require File.dirname(__FILE__) + '/lib/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'mercadopago-sdk'
+  gem.name          = 'simplex-mercadopago-sdk'
   gem.version       = MERCADO_PAGO_VERSION
   gem.authors       = %w(maticompiano)
   gem.email         = %w(matias.compiano@mercadolibre.com)
