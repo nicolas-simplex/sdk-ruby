@@ -10,8 +10,15 @@ class MercadoPagoTest < Test::Unit::TestCase
 	end
 
 	# Call preference added through button flow
+	def test_long_live_access_token
+		@mp = MercadoPago.new("LONG_LIVE_ACCESS_TOKEN")
+
+		assert_equal(@mp.get_access_token(), "LONG_LIVE_ACCESS_TOKEN")
+	end
+
+	# Call preference added through button flow
 	def test_get_preference
-		preferenceData = Hash["items" => Array(Array["title"=>"testCreate", "quantity"=>1, "unit_price"=>10.2, "currency_id"=>"ARS"])]
+		preferenceData = {"items" => ["title"=>"testCreate", "quantity"=>1, "unit_price"=>10.2, "currency_id"=>"ARS"]}
 
 		preference = @mp.create_preference(preferenceData)
 
